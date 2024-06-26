@@ -1,0 +1,6 @@
+FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-18
+
+# Optional: Install node_modules
+WORKDIR /workspace
+COPY package.json package-lock.json ./
+RUN npm install
