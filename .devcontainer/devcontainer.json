@@ -1,18 +1,14 @@
 {
-  "name": "Node.js Core Developer Environment",
-  "extensions": [
-    "github.vscode-pull-request-github",
-    "ms-vsliveshare.vsliveshare",
-    "vscode-icons-team.vscode-icons",
-    "visualstudioexptteam.vscodeintellicode"
-  ],
-  "image": "nodejs/devcontainer:nightly",
+  "name": "Node.js",
+  "dockerFile": "Dockerfile",
   "settings": {
-    "terminal.integrated.profiles.linux": {
-      "zsh (login)": {
-        "path": "zsh",
-        "args": ["-l"]
-      }
-    }
-  }
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ],
+  "forwardPorts": [3000],
+  "postCreateCommand": "npm install",
+  "remoteUser": "node"
 }
